@@ -5,7 +5,13 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://jolly-kleicha-594c9b.netlify.app',
+    'http://localhost:3000',
+    'http://127.0.0.1:5500',
+  ]
+}));
 app.use(express.json());
 
 // ─── Google Auth ───────────────────────────────────────────────────────────────
